@@ -118,4 +118,29 @@ button:hover {
 Rebilly.initialize({publishableKey: 'pk_sandbox_1234567890'});
 // mount a combined card element on the #payment-card `<div>` in the form above
 Rebilly.card.mount('#payment-card');
+
+card.on('change', function ({valid, completed, source, error}) {
+    if (error) {
+        // event.error exposes {code, message, type, details}
+        console.log(error.message);
+    }
+    if (valid) {
+        // field input became valid
+    }
+});
+
+
+var form = document.querySelector('form');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    Rebilly.createToken(form)
+        .then(function (token) {
+            // we have a token field in the form
+            // thus we can submit directly
+            form.submit();
+        })
+        .catch(function (error) {
+            // see error.code and error.message
+        });
+});
 </script>
