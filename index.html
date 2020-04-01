@@ -119,7 +119,7 @@ Rebilly.initialize({publishableKey: 'pk_sandbox_1234567890'});
 // mount a combined card element on the #payment-card `<div>` in the form above
 Rebilly.card.mount('#payment-card');
 
-card.on('change', function ({valid, completed, source, error}) {
+Rebilly.card.on('change', function ({valid, completed, source, error}) {
     if (error) {
         // event.error exposes {code, message, type, details}
         console.log(error.message);
