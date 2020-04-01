@@ -93,10 +93,6 @@ button:hover {
     border-color: rgba(0, 221, 26, .3);
 }
 
-.rebilly-framepay.rebilly-framepay-focus {
-    /*border-color: rgba(0, 221, 26, .3);*/
-}
-
 .rebilly-framepay.rebilly-framepay-invalid {
     border-color: rgba(221, 0, 4, .3);
 }
@@ -104,6 +100,8 @@ button:hover {
 <form method="post" action="/process">
     <div class="field">
         <label>Payment Card</label>
+        <label>First Name</label>
+        <label>Last Name</label>
         <div id="payment-card">
             <!-- FramePay will inject the payment card field here -->
         </div>
