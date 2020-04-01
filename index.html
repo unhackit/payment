@@ -125,6 +125,7 @@ Rebilly.card.mount('#payment-card');
 var form = document.querySelector('form');
 form.addEventListener('submit', function (event) {
     event.preventDefault();
+    console.log('submitting')
     Rebilly.createToken(form)
         .then(function (token) {
             // we have a token field in the form
