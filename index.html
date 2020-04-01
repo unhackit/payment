@@ -100,9 +100,9 @@ button:hover {
 <form method="post" action="/process">
     <div class="field">
         <label>Payment Card</label>
-        <label>First Name</label>
+        <label>First Name:</label>
         <input type="text" placeholder="Enter Name">
-        <label>Last Name</label>
+        <label>Last Name:</label>
         <input type="text" placeholder="Enter Name">
         <div id="payment-card">
             <!-- FramePay will inject the payment card field here -->
@@ -137,6 +137,7 @@ form.addEventListener('submit', function (event) {
         .then(function (token) {
             // we have a token field in the form
             // thus we can submit directly
+            console.log(token)
             form.submit();
         })
         .catch(function (error) {
